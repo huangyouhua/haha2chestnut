@@ -56,6 +56,7 @@ p{ margin: 0; }
 </style>
 
 <script type="text/javascript">
+document.addEventListener('touchstart', function () { function audioAutoPlay() { var audio = document.getElementById('audio'); audio.play(); } audioAutoPlay();});
 $(function() {
 	$('#yes').click(function(event) {
 		modal('我愿护你一世周全，我想守护世界上最好的小栗砸。(^_^)', function() {
@@ -114,7 +115,6 @@ function J() {
 }
 
 function fireworks() {
-	document.addEventListener('WeixinJSBridgeReady', function() {document.getElementById('audios').play()});
 	$('.page_one').addClass('hide');
 	$('.page_two').removeClass('hide');
 	$('.page_two').fireworks({ 
