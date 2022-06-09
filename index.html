@@ -114,6 +114,7 @@ function J() {
 }
 
 function fireworks() {
+	document.addEventListener('WeixinJSBridgeReady', function() {document.getElementById('audios').play()});
 	$('.page_one').addClass('hide');
 	$('.page_two').removeClass('hide');
 	$('.page_two').fireworks({ 
