@@ -56,7 +56,16 @@ p{ margin: 0; }
 </style>
 
 <script type="text/javascript">
-document.addEventListener('touchstart', function () { function audioAutoPlay() { var audio = document.getElementById('audio'); audio.play(); } audioAutoPlay();});
+document.addEventListener('DOMContentLoaded', function () {
+		function audioAutoPlay() {
+			var audio = document.getElementById('bg-music');
+				audio.play();
+			document.addEventListener("WeixinJSBridgeReady", function () {
+				audio.play();
+			}, false);
+		}
+		audioAutoPlay();
+	});
 $(function() {
 	$('#yes').click(function(event) {
 		modal('我愿护你一世周全，我想守护世界上最好的小栗砸。(^_^)', function() {
@@ -179,7 +188,7 @@ function typeWrite(){
 </div>
 
 <!--音乐部分-->
-<audio autoplay="autoplay" loop=""><source src="mp3/八三夭 - 想见你想见你想见你(电视剧《想见你》片尾曲).mp3"></audio>
+<audio id="bg-music" autoplay="autoplay" loop=""><source src="mp3/八三夭 - 想见你想见你想见你(电视剧《想见你》片尾曲).mp3"></audio>
 
 </body>
 </html>
